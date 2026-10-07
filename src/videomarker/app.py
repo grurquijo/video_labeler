@@ -420,7 +420,11 @@ class VideoPlayer(tk.Tk):
         self._sync_marker_views()
         self.select_marker(0)
 
-        self.play()
+        # self.play()
+        # self._schedule_tick(0)
+        self.is_paused = True
+        self.play_button.config(text="Play")
+        self.request_redraw()
         self._schedule_tick(0)
 
     def _close_player(self):
